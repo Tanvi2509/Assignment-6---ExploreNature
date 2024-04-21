@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExploreNature - Contact</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            padding: 20px;
+            background: #e6ffff
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        .alert {
+            display: none;
+            background-color: #ffc107;
+            color: #333;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="menu-content">
+          <ul class="menu-items">
+            <li class="item">
+              <a href="index.html">HOME</a>
+            </li>
+  
+            <li class="item">
+              <a href="about.html">ABOUT</a>
+            </li>
+  
+            <li class="item">
+              <a href="contact.html">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  
+      <nav class="navbar">
+        <i class="fa-solid fa-bars" id="sidebar-close"></i>
+      </nav>  
+
+    <main class="main">
+        <form id="admissionForm" action="submit_admission.php" method="post">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="message">Message (Optional)</label>
+            <textarea id="message" name="message"></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+        <div id="submittedMessage" class="alert">
+            Submitted successfully!
+        </div>
+
+        <footer>
+            &copy; ExploreNature. All rights reserved.
+        </footer>
+
+    </main>
+
+    <script src="script.js">
+        document.getElementById("admissionForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+            document.getElementById("submittedMessage").style.display = "block"; // Show submitted message
+        });
+    </script>
+
+</body>
+</html>
